@@ -1,5 +1,5 @@
 Enrollment<-function(Year){
-
+  library(RODBC)
   cedars <- odbcDriverConnect('driver={SQL Server};
                               server=srv-sql03;
                               database=stuinfo;
@@ -7,5 +7,5 @@ Enrollment<-function(Year){
 
 
 
-  Enrollment<-sqlQuery(stuinfo,paste("Select * from fnEnrollment(",year,",'",Sys.Date(),"','12/30/2099')"))
+  Enrollment<-sqlQuery(cedars,paste("Select * from fnEnrollment(",Year,",'",Sys.Date(),"','12/30/2099')"))
 }
