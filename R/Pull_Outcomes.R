@@ -7,15 +7,16 @@ PullOutcomes<-function(Metric,Year){
   datasources<-dat %>%
     filter(School.Year==Year)
 
-  if(nrow(datasources)==0){print(paste(Year," not found in source Data.  Please use ",
+  if(nrow(datasources)==0 & !(Metric %in% c('Enrollment'))){print(paste(Year," not found in source Data.  Please use ",
                                        cbind(paste(dat %>% select(School.Year) %>% distinct(),collapse=','),"Enrollment"),
                                        sep=''))}
 
 
   datasources<-datasources %>%
-    filter(Measure==Metric & !(Metric %in% c('Enrollment')))
+    filter(Measure==Metric)
 
-  if(nrow(datasources)==0){print(paste(Metric," not found in source Data in the specific year.  Please use ",
+  if(nrow(datasources)==0 & !(Metric %in% c('Enrollment')))
+     {print(paste(Metric," not found in source Data in the specific year.  Please use ",
                                        paste(dat %>% select(Measure) %>% distinct(),collapse=','),
                                        sep=''))}
 
