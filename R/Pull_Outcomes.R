@@ -8,12 +8,12 @@ PullOutcomes<-function(Metric,Year){
     filter(School.Year==Year)
 
   if(nrow(datasources)==0){print(paste(Year," not found in source Data.  Please use ",
-                                       paste(dat %>% select(School.Year) %>% distinct(),collapse=','),
+                                       cbind(paste(dat %>% select(School.Year) %>% distinct(),collapse=','),"Enrollment"),
                                        sep=''))}
 
 
   datasources<-datasources %>%
-    filter(Measure==Metric)
+    filter(Measure==Metric & !(Metric %in% c('Enrollment')))
 
   if(nrow(datasources)==0){print(paste(Metric," not found in source Data in the specific year.  Please use ",
                                        paste(dat %>% select(Measure) %>% distinct(),collapse=','),
@@ -35,6 +35,11 @@ PullOutcomes<-function(Metric,Year){
   if(Metric=='Growth'){
     dat<-pullSGP(location$Table.or.File.Location)
   }
+
+  if(Metric=='Enrollment'){
+    dat<-Enrollment(Year)
+  }
+
   return(dat)
 }
 
