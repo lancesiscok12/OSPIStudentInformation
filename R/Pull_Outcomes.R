@@ -16,9 +16,7 @@ PullOutcomes<-function(Metric,Year){
     filter(Measure==Metric)
 
   if(nrow(datasources)==0 & !(Metric %in% c('Enrollment')))
-     {print(paste(Metric," not found in source Data in the specific year.  Please use ",
-                                       paste(dat %>% select(Measure) %>% distinct(),collapse=','),
-                                       sep=''))}
+     {print(paste(Metric," not found in source Data in the specific year.",sep=''))}
 
 
   location<-datasources %>%
