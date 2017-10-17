@@ -1,4 +1,4 @@
-Package: rpackage
+Package: studentinformationr
 Title: What the Package Does (one line, title case)
 Version: 0.0.0.9000
 Authors@R: c(person("Lance","Sisco", role = c("aut", "cre"),
