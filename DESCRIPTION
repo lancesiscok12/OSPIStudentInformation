@@ -1,11 +1,8 @@
 Package: studentinformationr
 Title: What the Package Does (one line, title case)
 Version: 0.0.0.9000
-Authors@R: c(person("Lance","Sisco", role = c("aut", "cre"),
-                     email = "Lance.Sisco@K12.wa.us"))
-Description: This package compiles multiple scripts for Washington State OSPI Student Information.
+Authors@R: Lance Sisco, Lance.Sisco@k12.wa.us
+Description: This package compiles multiple scripts for Washington State OSPI Student Information
 Depends: R (>= 3.3.2)
-License: GPL-3
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 6.0.1
