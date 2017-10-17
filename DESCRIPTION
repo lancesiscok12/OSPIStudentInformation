@@ -1,7 +1,7 @@
 Package: studentinformationr
 Title: What the Package Does (one line, title case)
 Version: 0.0.0.9000
-Authors@R: Lance Sisco, Lance.Sisco@k12.wa.us
+Authors: Lance Sisco, Lance.Sisco@k12.wa.us
 Description: This package compiles multiple scripts for Washington State OSPI Student Information
 Depends: R (>= 3.3.2)
 Encoding: UTF-8
